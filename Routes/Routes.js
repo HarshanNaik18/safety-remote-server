@@ -110,4 +110,9 @@ router.post("/send_location_with_image", (req, res) => {
   });
 });
 
+
+router.get("/hello", (req, res)=>{
+    res.status(200).send("Hello from backend");
+})
+
 module.exports = router;
