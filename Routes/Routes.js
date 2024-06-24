@@ -39,19 +39,19 @@ router.get("/send_location", (req, res) => {
   const mapsUrl = generateMapsUrl(latitude, longitude);
 
   const subject = "Child Location Alert";
-  const htmlContent = `
-    <a href="${mapsUrl}" target="_blank">
-      <h1>Hello</h1>
-    </a>
-  `;
-  // HTML content for the email
-  //   const htmlContent = `
-  //   <h1>Alert</h1>
-  //   <p>Your child has clicked the button. Their location is</p>
+  // const htmlContent = `
   //   <a href="${mapsUrl}" target="_blank">
-  //     <img src="${staticMapUrl}" alt="Map">
+  //     <h1>Hello</h1>
   //   </a>
   // `;
+  // HTML content for the email
+    const htmlContent = `
+    <h1>Alert</h1>
+    <p>Your child has clicked the button. Their location is</p>
+    <a href="${mapsUrl}" target="_blank">
+      <img src="${staticMapUrl}" alt="Map">
+    </a>
+  `;
 
   const mailOptions = {
     from: EMAIL_USER,
@@ -74,19 +74,19 @@ router.post("/send_location_with_image", (req, res) => {
   const mapsUrl = generateMapsUrl(latitude, longitude);
 
   const subject = "Child Location Alert";
-  const htmlContent = `
-    <a href="${mapsUrl}" target="_blank">
-      <h1>Hello</h1>
-    </a>
-  `;
-  // HTML content for the email
-  //   const htmlContent = `
-  //   <h1>Alert</h1>
-  //   <p>Your child has clicked the button. Their location is</p>
+  // const htmlContent = `
   //   <a href="${mapsUrl}" target="_blank">
-  //     <img src="${staticMapUrl}" alt="Map">
+  //     <h1>Hello</h1>
   //   </a>
   // `;
+  // HTML content for the email
+    const htmlContent = `
+    <h1>Alert</h1>
+    <p>Your child has clicked the button. Their location is</p>
+    <a href="${mapsUrl}" target="_blank">
+      <img src="${staticMapUrl}" alt="Map">
+    </a>
+  `;
 
   const mailOptions = {
     from: EMAIL_USER,
