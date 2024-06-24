@@ -37,6 +37,7 @@ const transporter = nodemailer.createTransport({
 router.get("/send_location", (req, res) => {
   const { latitude, longitude } = req.query;
   const mapsUrl = generateMapsUrl(latitude, longitude);
+  const staticMapUrl = generateStaticMapUrl();
 
   const subject = "Child Location Alert";
   // const htmlContent = `
@@ -72,7 +73,7 @@ router.get("/send_location", (req, res) => {
 router.post("/send_location_with_image", (req, res) => {
   const { latitude, longitude, image } = req.body;
   const mapsUrl = generateMapsUrl(latitude, longitude);
-
+  const staticMapUrl = generateStaticMapUrl();
   const subject = "Child Location Alert";
   // const htmlContent = `
   //   <a href="${mapsUrl}" target="_blank">
